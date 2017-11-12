@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Title</title>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="head">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>SpringLove</title>
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/4.7.0/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-alpha.6-1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet"
+          th:href="@{/webjars/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.standalone.min.css}"/>
 </head>
 <body>
-<div>
-    <h2>This project i will offer it to <h1> Ahsan habib </h1> fel3alam </h2>
+<div class="container">
+    <div class=" text-center alert alert-success py3 m-5 p-5">
+        <h2>If you don't like Spring , go away ..</h2>
+    </div>
+    <div class=" text-center text-white bg-inverse py3 m-5 p-5">
+        <h2>About the project</h2>
+        <p>We have to develop a modern web application using Spring and Thymeleaf</p>
+        <p>We'll use the following tools :</p>
+        <ul class="inline-text">
+             JavaEE
+            / Maven
+            / Spring-boot
+            / Rest-Api
+            / MySQL
+            / SLACK
+            / GIT / Github
+        </ul>
+    </div>
+    <div class=" text-center alert alert-info py3 m-5 p-5">
+        <h2>You wanna contribute .. ?</h2>
+        <p>Send me a msg(OK:200) on my phone </p>
+    </div>
 </div>
 </body>
 </html>
