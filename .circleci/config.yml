@@ -40,3 +40,12 @@ jobs:
       # run tests!
       - run: mvn integration-test
 
+      - deploy:
+                name: deploy to test server
+                command: |
+                  if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                    echo "StrictHostKeyChecking no" > ~/.ssh/config
+                    ssh -T root@kadarh.me "rm *.jar"
+                    scp -r web/target/*.jar root@kadarh.me:./
+                    ssh -T root@kadarh.me "systemctl restart springbootBenya"
+                  fi
