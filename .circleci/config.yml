@@ -44,6 +44,5 @@ jobs:
                 name: deploy to test server
                 command: |
                     echo "StrictHostKeyChecking no" > ~/.ssh/config
-                    ssh -T root@159.203.98.215 "rm *.jar"
                     scp -r target/*.jar root@159.203.98.215:./
                     ssh -T root@159.203.98.215 "systemctl restart springbootBusiness"
