@@ -43,7 +43,9 @@ jobs:
       - deploy:
                 name: deploy to test server
                 command: |
+                if [ "${CIRCLE_BRANCH}" == "master" ]; then
                     echo "StrictHostKeyChecking no" > ~/.ssh/config
-                    ssh -T root@45.55.194.108 "rm *.jar"
-                    scp -r web/target/*.jar root@45.55.194.108:./
-                    ssh -T root@45.55.194.108 "systemctl restart business"
+                    ssh -T root@159.203.98.215 "rm *.jar"
+                    scp -r web/target/*.jar root@159.203.98.215:./
+                    ssh -T root@159.203.98.215 "systemctl restart springbootBusiness"
+                fi
