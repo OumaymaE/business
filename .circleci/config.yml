@@ -47,5 +47,5 @@ jobs:
                     echo "StrictHostKeyChecking no" > ~/.ssh/config
                     ssh -T root@159.203.98.215 "rm *.jar"
                     scp -r web/target/*.jar root@159.203.98.215:./
-                    ssh -T root@159.203.98.215 "systemctl restart springbootBusiness"
+                    ssh -T root@159.203.98.215 "./start.sh"
                 fi
